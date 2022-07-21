@@ -7,4 +7,4 @@ in case of facing an issue with run the app, please make sure:
 - Verify the name of input file (current example - Input.txt)
 
 
-Have Fun.
+.
