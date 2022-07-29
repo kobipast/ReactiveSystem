@@ -24,4 +24,22 @@ public class Util {
         }
         return true;
     }
+
+    public static boolean validateCircular(State state, String cellValue, int index) {
+        if(!cellValue.contains("=")){
+            return true;
+        }
+        for (int i = 0; i < cellValue.length(); i++) {
+            if(cellValue.charAt(i)== '{'){
+                int calculateIndex = Character.getNumericValue(cellValue.charAt(++i));
+                if(calculateIndex == index){
+                    System.out.println("Circular dependencies detect, Cell was not updated");
+                    return false;
+                }
+                return validateCircular(state , state.getState().get(calculateIndex).getValue(), index);
+            }
+        }
+        return true;
+    }
+
 }

@@ -1,8 +1,8 @@
 package main.java.com;
 
 public class Cell {
-    String value;
-    State baseState;
+    private String value;
+    private State baseState;
 
     public Cell(String value, State baseState) {
         this.value = value;
@@ -53,7 +53,9 @@ public class Cell {
         }
         return result;
     }
-
+    public String getValue() {
+        return value;
+    }
     public void setValue(String value) {
         this.value = value;
     }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 public class State {
-    ArrayList<Cell> state;
+    private ArrayList<Cell> state;
 
     public State() {
         this.state = new ArrayList<>();
@@ -29,9 +29,9 @@ public class State {
     public void updateState(String input) {
         String[] inputArray = input.split(" ");
         if(inputArray.length == 3){
-            int index = Integer.valueOf(inputArray[1]);
+            int index = Integer.parseInt(inputArray[1]);
             String newValue =  inputArray[2];
-            if(Util.isArithmetic(newValue)){
+            if(Util.isArithmetic(newValue) && Util.validateCircular(this , newValue, index)){
                 System.out.println("Cell #"+index+" changed to "+newValue);
                 state.get(index).setValue(newValue);
             }

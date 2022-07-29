@@ -17,6 +17,14 @@ public class StateTest {
         assertEquals(8,  state.getState().get(2).getValueAsInt());
     }
 
+    @Test
+    public void testUpdateStateInValid() {
+        initState( "2,18,=2*{0},9,={2}+1*5");
+        String expression = "b 0 ={4}";
+        state.updateState(expression);
+        assertEquals(2,  state.getState().get(0).getValueAsInt());
+    }
+
     private void initState(String stateAsString) {
         state = new State();
         String[] baseStateArray = stateAsString.split(",");

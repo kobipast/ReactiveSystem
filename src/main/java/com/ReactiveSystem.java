@@ -3,8 +3,8 @@ package main.java.com;
 import java.util.Scanner;
 
 public class ReactiveSystem {
-    String baseStateString;
-    State baseState;
+    private String baseStateString;
+    private State baseState;
 
     void run(){
         init(baseStateString);
@@ -26,9 +26,6 @@ public class ReactiveSystem {
             System.out.print("# ");
             input = scanner.nextLine();
         }
-
-        return;
-
     }
 
 
